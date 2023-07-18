@@ -1,0 +1,17 @@
+version: '3'
+services:
+  data_generator:
+    build:
+      dockerfile: ./opcua/Dockerfile
+    container_name: opc_data_generator
+    restart: on-failure
+    ports:
+      - "4840:4840"
+  mqtt_broker:
+    build:
+      dockerfile: ./mqtt/Dockerfile
+    container_name: mqtt_broker
+    restart: always
+    ports:
+      - "1883:1883"
+      - "9001:9001"
