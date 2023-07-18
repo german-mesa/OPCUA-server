@@ -29,9 +29,11 @@ The code does the following:
 To run the code, you need to have Python 3.6 or higher installed and install the "asyncua" library 
 using pip. Then, update the server endpoint, namespace, and other settings if necessary, and run 
 the script.
+
     python opcuaserver.4.py
 
 To deploy in your Docker environment just go to the server folder and execute:
+
     docker compose up --build -d
 
 For additional details, you can read this blog:
