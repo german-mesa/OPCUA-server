@@ -1,12 +1,31 @@
 version: '3'
 services:
-  data_generator:
+  data_python_generator:
     build:
-      dockerfile: ./opcua/Dockerfile
-    container_name: opc_data_generator
+      dockerfile: ./opcuapy/Dockerfile
+    container_name: opc_py_data_generator
     restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
     ports:
       - "4840:4840"
+
+  data_js_generator:
+    build:
+      dockerfile: ./opcuajs/Dockerfile
+    container_name: opc_js_data_generator
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    ports:
+      - "4841:4841"   
+
   mqtt_broker:
     build:
       dockerfile: ./mqtt/Dockerfile

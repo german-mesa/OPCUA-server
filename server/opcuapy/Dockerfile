@@ -4,6 +4,6 @@ RUN pip install asyncua==1.0.2
 
 WORKDIR /opt/opc_mockup/datagenerator
 
-COPY ./opcua /opt/opc_mockup/datagenerator
+COPY ./opcuapy /opt/opc_mockup/datagenerator
 
 CMD [ "python" ,"./opcuaserver.4.py"]

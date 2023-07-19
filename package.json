@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "log": "^6.3.1",
+    "logging": "^3.3.0",
+    "node-opcua": "^2.108.0"
+  }
+}
