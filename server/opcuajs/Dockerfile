@@ -1,11 +1,12 @@
-FROM node:14-slim
-
-WORKDIR /opt/opc_mockup/datagenerator
-
-COPY ./opcuajs /opt/opc_mockup/datagenerator
+FROM node:14-slim AS base
 
 RUN npm install node-opcua
 RUN npm install logging
 RUN npm install random
 
-CMD [ "node", "./opcuaserver.4.js" ]
+FROM base AS final
+
+WORKDIR /opt/opc_mockup/datagenerator
+COPY ./opcuajs /opt/opc_mockup/datagenerator
+
+CMD [ "node", "./opcuaserver.1.js" ]

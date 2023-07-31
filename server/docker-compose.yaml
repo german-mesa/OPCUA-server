@@ -4,7 +4,7 @@ services:
     build:
       dockerfile: ./opcuapy/Dockerfile
     container_name: opc_py_data_generator
-    restart: on-failure
+    restart: unless-stopped
     logging:
       driver: "json-file"
       options:
@@ -17,7 +17,7 @@ services:
     build:
       dockerfile: ./opcuajs/Dockerfile
     container_name: opc_js_data_generator
-    restart: on-failure
+    restart: unless-stopped
     logging:
       driver: "json-file"
       options:
@@ -30,7 +30,7 @@ services:
     build:
       dockerfile: ./mqtt/Dockerfile
     container_name: mqtt_broker
-    restart: always
+    restart: unless-stopped
     ports:
       - "1883:1883"
       - "9001:9001"
