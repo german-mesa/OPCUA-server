@@ -38,3 +38,7 @@ To deploy in your Docker environment just go to the server folder and execute:
 
 For additional details, you can read this blog:
 https://medium.com/@muhammadfaiznoh/getting-started-with-opc-ua-in-docker-c68a883d5c65
+
+
+For Maccor integration:
+https://github.com/BattGenie/pymacnet

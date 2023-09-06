@@ -39,6 +39,22 @@ services:
     networks:
       - mosquitto
 
+  maccor:
+    build:
+      dockerfile: ./maccor/Dockerfile
+    container_name: maccor
+    ports:
+      - "7889:7889"
+      - "7890:7890"
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    networks:
+      - mosquitto
+
 networks:
     mosquitto:
         name: mosquitto
